@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample2-angular-deployment
+spec:
+  replicas: 1 # Number of replicas you want to run
+  selector:
+    matchLabels:
+      app: sample2-angular
+  template:
+    metadata:
+      labels:
+        app: sample2-angular
+    spec:
+      containers:
+      - name: sample2-angular-container
+        image: anusha1681990/sampleproject:latest  # Replace with your Angular Docker image
+        ports:
+        - containerPort: 80  # Port your Angular app is listening on

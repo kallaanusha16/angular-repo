@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample2-angular-service
+spec:
+  selector:
+    app: sample2-angular
+  ports:
+    - protocol: TCP
+      port: 80  # Port your Angular app is listening on
+      targetPort: 80  # Port your Angular app is listening on
+  type: NodePort  # Expose the service outside the cluster
